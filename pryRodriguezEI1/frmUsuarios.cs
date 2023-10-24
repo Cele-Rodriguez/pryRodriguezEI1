@@ -12,9 +12,21 @@ namespace pryRodriguezEI1
 {
     public partial class frmUsuarios : Form
     {
+        clsAccesoDatos objBaseDatos; //Declaro un objeto de la clase clsAccesoDatos
+
         public frmUsuarios()
         {
             InitializeComponent();
+        }
+
+        private void frmUsuarios_Load(object sender, EventArgs e)
+        {
+            objBaseDatos = new clsAccesoDatos(); //Intancio el objeto     
+
+            objBaseDatos.ConectarBD(); //Llamo procedimiento 
+
+            lblEstadoConexion.Text = objBaseDatos.estadoConexion; 
+           
         }
     }
 }
