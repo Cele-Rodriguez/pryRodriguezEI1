@@ -28,5 +28,11 @@ namespace pryRodriguezEI1
             frmCargaProv frmCargaProveedores = new frmCargaProv();
             frmCargaProveedores.ShowDialog();
         }
+
+        private void mostrarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuarios frmUsuarios = new frmUsuarios();
+            frmUsuarios.ShowDialog();
+        }
     }
 }

@@ -25,8 +25,13 @@ namespace pryRodriguezEI1
 
             objBaseDatos.ConectarBD(); //Llamo procedimiento 
 
-            lblEstadoConexion.Text = objBaseDatos.estadoConexion; 
+            toolStripStatusLabel1.Text = objBaseDatos.estadoConexion; 
            
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

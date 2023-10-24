@@ -15,7 +15,7 @@ namespace pryRodriguezEI1
 
 
         string cadenaConexion = "Provider = Microsoft.ACE.OLEDB.12.0" +
-                                    "Data Source= 2_El_Club.accdb";
+                                    "Data Source= ../../2_El_Club.accdb";
 
         public string estadoConexion = "";
         
@@ -23,9 +23,9 @@ namespace pryRodriguezEI1
         {
             try
             { 
-                conexionBD = new OleDbConnection();
-                conexionBD.ConnectionString = cadenaConexion;
-                conexionBD.Open();
+                conexionBD = new OleDbConnection(); //instancio en memoria
+                conexionBD.ConnectionString = cadenaConexion; //donde esta la conexion
+                conexionBD.Open(); //abre base de datos
                 estadoConexion = "Conectado";
             } 
             catch (Exception ex)
@@ -37,14 +37,21 @@ namespace pryRodriguezEI1
         public void TraerDatos()
         { 
             comandoBD = new OleDbCommand();
+            lectorBD = new OleDbDataReader();
 
             comandoBD.Connection = conexionBD;
-            comandoBD.CommandType = System.Data.CommandType.TableDirect; // el tipo de accion 
+            comandoBD.CommandType = System.Data.CommandType.TableDirect; // el tipo de accion (traer tabla)
             comandoBD.CommandText = "SOCIOS"; // nombre de la tabla que ejecuta la accion 
+            
+            lectorBD = comandoBD.ExecuteReader();
 
+           
             if (lectorBD.Read())
             {
-                datosTabla = lectorBD[0];
+
+            }
+            else
+            {
 
             }
         }
