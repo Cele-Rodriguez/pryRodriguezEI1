@@ -28,41 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.DGVUsuarios = new System.Windows.Forms.DataGridView();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.lblestadoConexion = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.statusStrip1.SuspendLayout();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).BeginInit();
+            this.lblestadoConexion.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // DGVUsuarios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 32);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(492, 185);
-            this.dataGridView1.TabIndex = 0;
+            this.DGVUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8});
+            this.DGVUsuarios.Location = new System.Drawing.Point(29, 32);
+            this.DGVUsuarios.Name = "DGVUsuarios";
+            this.DGVUsuarios.Size = new System.Drawing.Size(492, 185);
+            this.DGVUsuarios.TabIndex = 0;
             // 
-            // btnBuscar
+            // btnListar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(446, 266);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 29);
-            this.btnBuscar.TabIndex = 1;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnListar.Location = new System.Drawing.Point(446, 266);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(75, 29);
+            this.btnListar.TabIndex = 1;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
-            // statusStrip1
+            // lblestadoConexion
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblestadoConexion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 307);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(561, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
-            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
+            this.lblestadoConexion.Location = new System.Drawing.Point(0, 307);
+            this.lblestadoConexion.Name = "lblestadoConexion";
+            this.lblestadoConexion.Size = new System.Drawing.Size(561, 22);
+            this.lblestadoConexion.TabIndex = 2;
+            this.lblestadoConexion.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // toolStripStatusLabel1
             // 
@@ -70,20 +87,61 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Codigo Socios";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Apellido";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Lugar Nacimiento";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Edad";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Sexo";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Ingreso";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Puntaje";
+            this.Column8.Name = "Column8";
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 329);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lblestadoConexion);
+            this.Controls.Add(this.btnListar);
+            this.Controls.Add(this.DGVUsuarios);
             this.Name = "frmUsuarios";
-            this.Text = "frmABM";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Mostrar Usuarios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).EndInit();
+            this.lblestadoConexion.ResumeLayout(false);
+            this.lblestadoConexion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,9 +149,17 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.DataGridView DGVUsuarios;
+        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.StatusStrip lblestadoConexion;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }

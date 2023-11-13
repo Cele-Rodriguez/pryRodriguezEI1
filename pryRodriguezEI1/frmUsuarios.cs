@@ -33,5 +33,10 @@ namespace pryRodriguezEI1
         {
 
         }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            objBaseDatos.TraerDatos(DGVUsuarios);
+        }
     }
 }

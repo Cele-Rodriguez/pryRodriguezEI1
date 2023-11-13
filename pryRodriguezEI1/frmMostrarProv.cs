@@ -69,7 +69,7 @@ namespace pryRodriguezEI1
         {
             TreeNode newSelected = e.Node;
             listView1.Items.Clear();
-            DirectoryInfo nodeDirInfo = (DirectoryInfo)newSelected.Tag;
+            DirectoryInfo nodeDirInfo = (DirectoryInfo)newSelected.Tag; //
             ListViewItem.ListViewSubItem[] subItems;
             ListViewItem item = null;
 
