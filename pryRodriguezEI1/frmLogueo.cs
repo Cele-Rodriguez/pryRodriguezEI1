@@ -40,6 +40,8 @@ namespace pryRodriguezEI1
             
             try
             {
+                objBaseDatos.ConectarBD();
+
                 if (objBaseDatos.AutenticarUsuario(nombreUsuario, contraseña)) //LLamo procedimiento
                 {
                     MessageBox.Show("Inicio de sesión exitoso");

@@ -32,12 +32,12 @@ namespace pryRodriguezEI1
         {
             //objAccesoBD.TraerDatosDataSet(DGVUsuarios);
 
-            objAccesoBD.FiltrarPorId(DGVUsuarios, txtIDCliente.Text);
+            objAccesoBD.FiltrarPorId(DGVUsuarios, txtIDCliente.Text);       
 
         }
         private void btnBuscarA_Click(object sender, EventArgs e)
         {
-
+            objAccesoBD.FiltrarApellido(DGVUsuarios, txtApellido.Text);
         }
 
     }    
