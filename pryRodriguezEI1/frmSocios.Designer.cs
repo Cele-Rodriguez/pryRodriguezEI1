@@ -1,6 +1,6 @@
 ﻿namespace pryRodriguezEI1
 {
-    partial class frmUsuarios
+    partial class frmSocios
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.DGVUsuarios = new System.Windows.Forms.DataGridView();
-            this.btnListar = new System.Windows.Forms.Button();
-            this.lblestadoConexion = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +37,9 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.lblestadoConexion = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).BeginInit();
             this.lblestadoConexion.SuspendLayout();
             this.SuspendLayout();
@@ -60,32 +60,6 @@
             this.DGVUsuarios.Name = "DGVUsuarios";
             this.DGVUsuarios.Size = new System.Drawing.Size(492, 185);
             this.DGVUsuarios.TabIndex = 0;
-            // 
-            // btnListar
-            // 
-            this.btnListar.Location = new System.Drawing.Point(446, 266);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(75, 29);
-            this.btnListar.TabIndex = 1;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
-            // 
-            // lblestadoConexion
-            // 
-            this.lblestadoConexion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.lblestadoConexion.Location = new System.Drawing.Point(0, 307);
-            this.lblestadoConexion.Name = "lblestadoConexion";
-            this.lblestadoConexion.Size = new System.Drawing.Size(561, 22);
-            this.lblestadoConexion.TabIndex = 2;
-            this.lblestadoConexion.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // Column1
             // 
@@ -127,7 +101,33 @@
             this.Column8.HeaderText = "Puntaje";
             this.Column8.Name = "Column8";
             // 
-            // frmUsuarios
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(446, 266);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(75, 29);
+            this.btnListar.TabIndex = 1;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            // 
+            // lblestadoConexion
+            // 
+            this.lblestadoConexion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.lblestadoConexion.Location = new System.Drawing.Point(0, 307);
+            this.lblestadoConexion.Name = "lblestadoConexion";
+            this.lblestadoConexion.Size = new System.Drawing.Size(561, 22);
+            this.lblestadoConexion.TabIndex = 2;
+            this.lblestadoConexion.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // frmSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -135,9 +135,9 @@
             this.Controls.Add(this.lblestadoConexion);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.DGVUsuarios);
-            this.Name = "frmUsuarios";
+            this.Name = "frmSocios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mostrar Usuarios";
+            this.Text = "Mostrar Socios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).EndInit();
             this.lblestadoConexion.ResumeLayout(false);

@@ -75,6 +75,7 @@
             this.btnIngresar.TabIndex = 4;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // frmLogueo
             // 
@@ -89,6 +90,7 @@
             this.Name = "frmLogueo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar sesión";
+            this.Load += new System.EventHandler(this.frmLogueo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

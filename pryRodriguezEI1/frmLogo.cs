@@ -26,8 +26,8 @@ namespace pryRodriguezEI1
         {
             timer1.Stop();
             this.Hide();
-            frmMain frmMain = new frmMain();
-            frmMain.ShowDialog();
+            frmLogueo frmLogueo = new frmLogueo();
+            frmLogueo.ShowDialog();
             this.Close();
         }
 

@@ -58,11 +58,11 @@
     <Compile Include="frmBuscarUsuario.Designer.cs">
       <DependentUpon>frmBuscarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUsuarios.cs">
+    <Compile Include="frmSocios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUsuarios.Designer.cs">
-      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    <Compile Include="frmSocios.Designer.cs">
+      <DependentUpon>frmSocios.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCargaProv.cs">
       <SubType>Form</SubType>
@@ -99,8 +99,8 @@
     <EmbeddedResource Include="frmBuscarUsuario.resx">
       <DependentUpon>frmBuscarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuarios.resx">
-      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="frmSocios.resx">
+      <DependentUpon>frmSocios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCargaProv.resx">
       <DependentUpon>frmCargaProv.cs</DependentUpon>

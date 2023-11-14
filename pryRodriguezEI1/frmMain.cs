@@ -37,7 +37,7 @@ namespace pryRodriguezEI1
 
         private void mostrarUsuariosToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            frmUsuarios frmUsuarios = new frmUsuarios();
+            frmSocios frmUsuarios = new frmSocios();
             frmUsuarios.ShowDialog();
         }
 

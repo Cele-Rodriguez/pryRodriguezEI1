@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace pryRodriguezEI1
 {
-    public partial class frmUsuarios : Form
+    public partial class frmSocios : Form
     {
         clsAccesoDatos objBaseDatos; //Declaro un objeto de la clase clsAccesoDatos
 
-        public frmUsuarios()
+        public frmSocios()
         {
             InitializeComponent();
         }

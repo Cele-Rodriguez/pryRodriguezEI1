@@ -95,7 +95,31 @@ namespace pryRodriguezEI1
                 
             }
         }
+        public bool AutenticarUsuario(string nombreUsuario, string contraseña)
+        {
+            try
+            {
+                string consulta = "SELECT * FROM SOCIOS WHERE NOMBRE = @Usuario AND CODIGO_SOCIO = @Contraseña";
 
+                using (OleDbCommand comando = new OleDbCommand(consulta, conexionBD))
+                {
+                    comando.Parameters.AddWithValue("@Usuario", nombreUsuario);
+                    comando.Parameters.AddWithValue("@Contraseña", contraseña);
+
+                    using (OleDbDataReader reader = comando.ExecuteReader())
+                    {
+                        return reader.HasRows;
+                    }
+                }
+
+            }
+            catch (OleDbException ex)
+            {
+                throw new Exception("Error al acceder a la base de datos: " + ex.Message);
+
+
+            }
+        }
 
     }
 }
