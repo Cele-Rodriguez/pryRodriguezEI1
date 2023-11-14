@@ -34,10 +34,10 @@ namespace pryRodriguezEI1
         
         public void btnIngresar_Click(object sender, EventArgs e)
         {
-
+            
             string nombreUsuario = txtUsuario.Text;
             string contraseña = txtContraseña.Text;
-
+            
             try
             {
                 if (objBaseDatos.AutenticarUsuario(nombreUsuario, contraseña)) //LLamo procedimiento
@@ -46,7 +46,7 @@ namespace pryRodriguezEI1
                     frmMain frmMain = new frmMain();
                     frmMain.ShowDialog();
                     this.Close();                   
-                    
+                    Application.Exit();
                 }
                 else
                 {
@@ -56,10 +56,11 @@ namespace pryRodriguezEI1
                     
                     if (Incorrecto == 3)
                     {   MessageBox.Show("Intentos máximos superados");
-                        frmLogueo frmLogueo = new frmLogueo();
-                        frmLogueo.Close();
+                        //frmLogueo frmLogueo = new frmLogueo();
+                        //frmLogueo.Close();
                         this.Close();
-                        //btnIngresar.Enabled = false;  
+                        Application.Exit();
+                        
                     }
                     
                 }

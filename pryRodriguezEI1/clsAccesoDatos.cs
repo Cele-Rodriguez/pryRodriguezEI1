@@ -20,19 +20,19 @@ namespace pryRodriguezEI1
         public string cadenaConexion;
         public string estadoConexion;
         public string Errores;
-        
+
         OleDbDataAdapter AdaptadorDS;
-        DataSet objDataSet= new DataSet();
+        DataSet objDataSet = new DataSet();
         public void ConectarBD()
         {
             cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source=../../Resources/El_CLUB.accdb";
             try
-            { 
+            {
                 conexionBD = new OleDbConnection(); //instancio en memoria
                 conexionBD.ConnectionString = cadenaConexion; //donde esta la conexion
                 conexionBD.Open(); //abre base de datos
                 estadoConexion = "Conectado";
-            } 
+            }
             catch (Exception ex)
             {
                 estadoConexion = "Error:" + ex.Message + "\nRuta: " + System.IO.Path.GetFullPath("../../Resources/El_CLUB"); ;
@@ -40,7 +40,7 @@ namespace pryRodriguezEI1
         }
 
         public void TraerDatos(DataGridView grilla)
-        { 
+        {
             comandoBD = new OleDbCommand();
             //lectorBD = new OleDbDataReader();
             try
@@ -66,7 +66,7 @@ namespace pryRodriguezEI1
         public void TraerDatosDataSet(DataGridView grilla)
         {
             try
-            {   ConectarBD();
+            { ConectarBD();
                 comandoBD = new OleDbCommand();
                 comandoBD.Connection = conexionBD; //vinculo comando con conexion 
                 comandoBD.CommandType = System.Data.CommandType.TableDirect; // el tipo de accion (traer tabla)
@@ -75,16 +75,10 @@ namespace pryRodriguezEI1
                 AdaptadorDS = new OleDbDataAdapter(comandoBD);
                 AdaptadorDS.Fill(objDataSet);
 
-                if (objDataSet.Tables["SOCIOS"].Rows.Count > 0)
-                {  
-                    grilla.Columns.Add("ID", "ID");
-                    grilla.Columns.Add("Nombre", "Nombre");
-                    grilla.Columns.Add("Apellido", "Apellido");
-                    foreach (DataRow fila in objDataSet.Tables[0].Rows)
-                    {
+                while (objDataSet.Tables["SOCIOS"].Rows.Count > 0)
+                {
+                    //
 
-                    }
-                     
 
                 }
 
@@ -92,34 +86,122 @@ namespace pryRodriguezEI1
             catch (Exception ex)
             {
                 Errores = ex.Message;
-                
+
             }
         }
+
+
+
+
+
         public bool AutenticarUsuario(string nombreUsuario, string contraseña)
-        {
+        {   bool bandera = new bool();
+            bandera = false;
             try
-            {
+            {  // Define la consulta parametrizada
                 string consulta = "SELECT * FROM SOCIOS WHERE NOMBRE = @Usuario AND CODIGO_SOCIO = @Contraseña";
 
                 using (OleDbCommand comando = new OleDbCommand(consulta, conexionBD))
-                {
+                {// Agrega el parámetro
+                    bandera = true;
                     comando.Parameters.AddWithValue("@Usuario", nombreUsuario);
                     comando.Parameters.AddWithValue("@Contraseña", contraseña);
-
+                    // Crea un adaptador de datos y un conjunto de datos
                     using (OleDbDataReader reader = comando.ExecuteReader())
                     {
                         return reader.HasRows;
                     }
+                     
                 }
+                if (bandera)
+                {
+                    // Registro del inicio de sesión
+                    RegistrarInicioSesion(nombreUsuario);
+                    
+                }
+                
+              
+
 
             }
             catch (OleDbException ex)
             {
                 throw new Exception("Error al acceder a la base de datos: " + ex.Message);
-
-
             }
+           
+        }
+
+        public void RegistrarInicioSesion(string nombreUsuario)
+        {
+            try
+            {
+                    // Crea una consulta SQL para insertar el registro de inicio de sesión
+                    string consulta = "INSERT INTO REGISTRO (NOMBRE, FECHA) VALUES (@NombreUsuario, @FechaInicioSesion)";
+
+                    using (OleDbCommand comando = new OleDbCommand(consulta, conexionBD))
+                    {
+                        // Agrega los parámetros a la consulta
+                        comando.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
+                        comando.Parameters.AddWithValue("@FechaInicioSesion", DateTime.Now);
+
+                        // Ejecuta la consulta
+                        comando.ExecuteNonQuery();
+                    }
+                
+            }
+            catch (OleDbException ex)
+            {
+                // Maneja las excepciones según tus necesidades
+                Console.WriteLine("Error al registrar inicio de sesión: " + ex.Message);
+            }
+        }
+
+
+
+        public void FiltrarPorId(DataGridView dataGridView, string idIngresado)
+            {
+                if (!string.IsNullOrEmpty(idIngresado))
+                {
+                    try
+                    {
+                        // Define la consulta parametrizada
+                        string consulta = "SELECT * FROM SOCIOS WHERE CODIGO_SOCIO = @Id";
+
+                        using (OleDbCommand comando = new OleDbCommand(consulta, conexionBD))
+                        {
+                            // Agrega el parámetro a la consulta
+                            comando.Parameters.AddWithValue("@Id", idIngresado);
+
+                            // Crea un adaptador de datos y un conjunto de datos
+                            using (OleDbDataAdapter adaptador = new OleDbDataAdapter(comando))
+                            {
+                                // Crea un nuevo conjunto de datos
+                                DataSet dataSet = new DataSet();
+
+                                // Llena el conjunto de datos con los resultados de la consulta
+                                adaptador.Fill(dataSet, "SOCIOS");
+
+                                // Asigna el conjunto de datos a la DataGridView
+                                dataGridView.DataSource = dataSet.Tables["TuTabla"];
+                            }
+                        }
+                    }
+
+                    catch (OleDbException ex)
+                    {
+                        MessageBox.Show("Error al acceder a la base de datos: " + ex.Message);
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, ingresa un ID antes de filtrar.");
+                }
+            
+
         }
 
     }
 }
+        
+    

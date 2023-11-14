@@ -102,6 +102,10 @@ namespace pryRodriguezEI1
 
         }
 
+        private void frmMostrarProv_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

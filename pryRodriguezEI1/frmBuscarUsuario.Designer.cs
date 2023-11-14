@@ -159,7 +159,7 @@
             this.groupBox1.Size = new System.Drawing.Size(261, 85);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Buscar por:";
             // 
             // groupBox2
             // 
@@ -171,7 +171,7 @@
             this.groupBox2.Size = new System.Drawing.Size(261, 85);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Buscar por:";
             // 
             // btnBuscarA
             // 
@@ -181,6 +181,7 @@
             this.btnBuscarA.TabIndex = 6;
             this.btnBuscarA.Text = "Buscar";
             this.btnBuscarA.UseVisualStyleBackColor = true;
+            this.btnBuscarA.Click += new System.EventHandler(this.btnBuscarA_Click);
             // 
             // frmBuscarUsuario
             // 
@@ -193,6 +194,7 @@
             this.Name = "frmBuscarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Usuario";
+            this.Load += new System.EventHandler(this.frmBuscarUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

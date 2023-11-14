@@ -34,11 +34,11 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.lblMostrar = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Detalle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblMostrar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -85,6 +85,15 @@
             this.imageList1.Images.SetKeyName(0, "carpeta.png");
             this.imageList1.Images.SetKeyName(1, "Archivo.png");
             // 
+            // lblMostrar
+            // 
+            this.lblMostrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMostrar.Location = new System.Drawing.Point(0, 220);
+            this.lblMostrar.Name = "lblMostrar";
+            this.lblMostrar.Size = new System.Drawing.Size(325, 105);
+            this.lblMostrar.TabIndex = 5;
+            this.lblMostrar.Text = "label1";
+            // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -114,15 +123,6 @@
             this.Detalle.Text = "Detalle";
             this.Detalle.Width = 62;
             // 
-            // lblMostrar
-            // 
-            this.lblMostrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMostrar.Location = new System.Drawing.Point(0, 220);
-            this.lblMostrar.Name = "lblMostrar";
-            this.lblMostrar.Size = new System.Drawing.Size(325, 105);
-            this.lblMostrar.TabIndex = 5;
-            this.lblMostrar.Text = "label1";
-            // 
             // frmMostrarProv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,6 +132,7 @@
             this.Name = "frmMostrarProv";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mostrar Proveedores";
+           // this.Load += new System.EventHandler(this.frmMostrarProv_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

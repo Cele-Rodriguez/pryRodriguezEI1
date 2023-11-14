@@ -18,12 +18,28 @@ namespace pryRodriguezEI1
         public frmBuscarUsuario()
         {
             InitializeComponent();
+            
         }
         clsAccesoDatos objAccesoBD = new clsAccesoDatos();
 
+        private void frmBuscarUsuario_Load(object sender, EventArgs e)
+        {
+            objAccesoBD = new clsAccesoDatos(); //Instancio el objeto     
+
+            objAccesoBD.ConectarBD(); //Llamo procedimiento
+        }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            objAccesoBD.TraerDatosDataSet(DGVUsuarios);
+            //objAccesoBD.TraerDatosDataSet(DGVUsuarios);
+
+            objAccesoBD.FiltrarPorId(DGVUsuarios, txtIDCliente.Text);
+
         }
-    }
+        private void btnBuscarA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+    }    
+    
 }

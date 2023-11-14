@@ -89,7 +89,7 @@
             this.btnModificar.TabIndex = 20;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            //this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -218,6 +218,7 @@
             this.dgvDatos.Size = new System.Drawing.Size(788, 246);
             this.dgvDatos.TabIndex = 27;
             this.dgvDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellDoubleClick);
+            //this.dgvDatos.RowDividerDoubleClick += new System.Windows.Forms.DataGridViewRowDividerDoubleClickEventHandler(this.dgvDatos_RowDividerDoubleClick);
             // 
             // Column1
             // 

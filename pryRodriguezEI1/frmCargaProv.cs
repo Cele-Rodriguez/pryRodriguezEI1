@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Security.Policy;
 
 namespace pryRodriguezEI1
 {
@@ -81,9 +82,52 @@ namespace pryRodriguezEI1
             txtLiq.Text= dgvDatos.Rows[e.RowIndex].Cells[7].Value.ToString();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
+        //private void btnModificar_Click(object sender, EventArgs e)
+        //{
+        //    //identificar el registro a modificar
+        //   DirectoryInfo infoCarpeta = new DirectoryInfo(@"../..");
+        //
+        //    string rutaarchivo = infoCarpeta.FullName + "\\BasesDatos\\base.csv";
+        //    string rutaarchivoaux = infoCarpeta.FullName + "\\BasesDatos\\temporal.csv";
+        //
+        //    StreamReader lectorArchivo = new StreamReader(rutaarchivo);
+        //    StreamWriter archivoAuxiliar = new StreamWriter(rutaarchivoaux);
 
-        }
+        //    string linea;
+        //     string[] textoSeparado;
+
+        //        while (!lectorArchivo.EndOfStream)
+        //  {
+        //      linea = lectorArchivo.ReadLine();
+
+        //            textoSeparado = linea.Split(';');
+        //
+        //        if (Codigo == textoSeparado[0])
+        //        {
+        //            MessageBox.Show("aquì hay que modificar " + textoSeparado[2]);
+                    //grabarlo
+        //            textoSeparado[1] =  ;
+        //            archivoAuxiliar.WriteLine(textoSeparado[0]);
+        //        }
+        //        else
+        //        {
+                    //grabo
+        //            archivoAuxiliar.WriteLine(linea);
+        //        }
+
+        //    }
+        //    archivoAuxiliar.Close();
+        //    lectorArchivo.Close();
+
+         
+      
+        //}
+        //string Codigo;
+
+        //private void dgvDatos_RowDividerDoubleClick(object sender, DataGridViewRowDividerDoubleClickEventArgs e)
+        //{
+        //    Codigo = dgvDatos.Rows[e.RowIndex].Cells[0].Value.ToString();
+        //    txtModificar.Text = dgvDatos.Rows[e.RowIndex].Cells[1].Value.ToString();
+        //}
     }
 }
