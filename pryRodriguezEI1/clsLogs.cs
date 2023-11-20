@@ -20,35 +20,44 @@ namespace pryRodriguezEI1
             string cadenaconexion = "Provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source=C:\\Users\\Nico\\Downloads\\EL_CLUB1.accdb";
             public string estadoconexion = "";
 
-            public void insertar(TextBox fechahora, TextBox nombre, TextBox accion)
+            
+        }
+        internal class LogsManager
+        {
+            OleDbCommand comando;
+            OleDbConnection conexionBD;
+            string cadenaConexion = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Nico\\Downloads\\EL_CLUB1.accdb";
+            public string EstadoConexion = "";
+
+            public void InsertarRegistro(TextBox fechahora, TextBox nombre, TextBox accion)
             {
-                var cadena = ConfigurationManager.ConnectionStrings["dbacces"].ConnectionString;
                 try
                 {
-                    using (OleDbConnection conector = new OleDbConnection(cadena))
+                    using (OleDbConnection conector = new OleDbConnection(cadenaConexion))
                     {
-                        //6b
                         conector.Open();
-                        string query = @"insert into Tabla1(fechahora,nombre,accion )values(@fecha,@nombre,@accion);";
+                        string query = "INSERT INTO Tabla1 (fechahora, nombre, accion) VALUES (@fecha, @nombre, @accion)";
                         comando = new OleDbCommand(query, conector);
                         comando.Parameters.AddWithValue("@fecha", fechahora.Text);
                         comando.Parameters.AddWithValue("@nombre", nombre.Text);
                         comando.Parameters.AddWithValue("@accion", accion.Text);
+
                         if (comando.ExecuteNonQuery() > 0)
                         {
-                            MessageBox.Show("Datos Guardados ");
+                            // Considera devolver un resultado en lugar de mostrar un mensaje aquí
+                            // MessageBox.Show("Datos Guardados ");
+                            EstadoConexion = "Datos Guardados";
                         }
                     }
-
-
-
-
                 }
                 catch (Exception ex)
                 {
-                    estadoconexion = "Error " + ex;
+                    // Aquí puedes lograr o registrar detalles más específicos sobre la excepción
+                    EstadoConexion = "Error: " + ex.Message;
                 }
             }
         }
+
+
     }
-ç
+}
